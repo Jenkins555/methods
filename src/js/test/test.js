@@ -8,3 +8,12 @@ test('clas test', () => {
     const bowman = new Character(123, 'Magician1');
   }).toThrow('Введите текстовое значение');
 });
+
+
+test('test levelUp', () => {
+  const magician = new Character('Иосиф', 'Мagician')
+  expect(() => {
+    magician.health = 0;
+    magician.levelUp;
+  }).toThrow('Нельзя повысить левел умершего');
+});

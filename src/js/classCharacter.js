@@ -69,4 +69,21 @@ export default class Character {
       throw new Error('Введите текстовое значение');
     }
   }
+
+  levelUp(health) {
+   if (health !== 0 ) {
+     this.level++ ;
+    this.attack =this.attack + (this.attack/100 * 20);
+    this.defence =this.defence + (this.defence/100 * 20);
+    this.health = 100;
+   } else {
+    throw new Error('Нельзя повысить левел умершего');
+   }
+  }
+
+  damage(points) {
+    if (health >= 0) {
+    this.health -= points * (1 - defence / 100);
+    }
+  }
 }
